@@ -166,7 +166,22 @@ This will execute both notebooks in order and save results to `results/`.
 
 ### Processed Data
 - `data/processed/variants_filtered.csv` — Cleaned variant dataset ready for downstream use
+  
+## Results Summary
 
+- Final dataset size: 42,854 variants
+- Genes analyzed: 55 (including multi-gene annotations)
+- Clinical significance distribution:
+  - Pathogenic: 84.7%
+  - Benign: 15.3%
+
+### Key Observations:
+- Variants are highly enriched in DNA repair genes such as BRCA1, BRCA2, and ATM
+- Deletions and single nucleotide variants are the most common variant types
+- Pathogenic variants are more frequent than benign variants, reflecting known ClinVar bias
+- Some variants map to multiple genes, influencing gene-level distribution and ratio calculations
+
+These results are consistent with known biological roles of DNA repair genes in disease, particularly cancer susceptibility.
 ---
 
 ## Key Findings & Interpretation
@@ -193,7 +208,7 @@ Results are interpreted in the context of:
 5. **Allele frequency completeness** — Allele frequency fields may be sparse; conditional analysis only if sufficient data
 6. **No transcript isoform mapping** — Variants mapped to genes, not specific isoforms; domain-level analysis not included (extension)
 7. **No regulatory annotation** — Does not incorporate experimental enhancer/promoter data
-
+8. **Some variants are associated with multiple gene annotations in ClinVar, which may affect gene-level summaries.
 ---
 
 ## Future Improvements
